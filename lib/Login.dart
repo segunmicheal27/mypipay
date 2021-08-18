@@ -1,8 +1,9 @@
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mypipay/layouts/edit_textbox_holder.dart';
 
-import './yelllow_btn.dart';
+import 'layouts/yelllow_btn.dart';
 
 class Login extends StatelessWidget {
   Login({
@@ -14,20 +15,19 @@ class Login extends StatelessWidget {
       backgroundColor: const Color(0xfff5f6fa),
       body: Stack(
         children: <Widget>[
-          Pinned.fromPins(
-            Pin(start: 0.0, end: 0.0),
-            Pin(start: 0.0, end: 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment(-1.0, -0.07),
-                  end: Alignment(1.0, -0.06),
-                  colors: [const Color(0xff31255c), const Color(0xff5b307e)],
-                  stops: [0.0, 1.0],
-                ),
+          // background
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment(-1.0, -0.07),
+                end: Alignment(1.0, -0.06),
+                colors: [const Color(0xff31255c), const Color(0xff5b307e)],
+                stops: [0.0, 1.0],
               ),
             ),
           ),
+
+          // logo background
           Pinned.fromPins(
             Pin(size: 267.0, start: -109.0),
             Pin(size: 126.0, start: 67.0),
@@ -38,152 +38,7 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-          Pinned.fromPins(
-            Pin(start: 24.0, end: 24.0),
-            Pin(size: 85.0, middle: 0.3095),
-            child: Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(start: 0.0, end: 0.0),
-                  Pin(size: 56.0, end: 0.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(28.0),
-                      color: const Color(0xffffffff),
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 53.0, start: 0.0),
-                  Pin(size: 56.0, end: 0.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(8.0),
-                        bottomLeft: Radius.circular(8.0),
-                      ),
-                      color: const Color(0xfff4f4f4),
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 72.0, middle: 0.2627),
-                  Pin(size: 18.0, middle: 0.7164),
-                  child: Text(
-                    'username',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 14,
-                      color: const Color(0x80707070),
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 84.0, start: 0.0),
-                  Pin(size: 19.0, start: 0.0),
-                  child: Text(
-                    'Username',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 16,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 28.0, start: 17.0),
-                  Pin(size: 33.0, end: 11.0),
-                  child: Text(
-                    '@',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 27,
-                      color: const Color(0xffe1ddf8),
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: 29.0, end: 19.0),
-            Pin(size: 91.0, middle: 0.448),
-            child: Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(start: 0.0, end: 0.0),
-                  Pin(size: 56.0, end: 6.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(28.0),
-                      color: const Color(0xffffffff),
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 53.0, start: 0.0),
-                  Pin(size: 56.0, end: 6.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(8.0),
-                        bottomLeft: Radius.circular(8.0),
-                      ),
-                      color: const Color(0xfff4f4f4),
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 68.0, middle: 0.2587),
-                  Pin(size: 18.0, middle: 0.6575),
-                  child: Text(
-                    'password',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 14,
-                      color: const Color(0x80707070),
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 78.0, start: 0.0),
-                  Pin(size: 19.0, start: 0.0),
-                  child: Text(
-                    'Password',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 16,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 18.0, start: 18.0),
-                  Pin(size: 50.0, end: 0.0),
-                  child: Text(
-                    '*',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 41,
-                      color: const Color(0xffe1ddf8),
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // top logo
           Pinned.fromPins(
             Pin(size: 110.2, start: 10.0),
             Pin(size: 73.1, start: 89.4),
@@ -587,9 +442,42 @@ class Login extends StatelessWidget {
               ],
             ),
           ),
+
+          // big login text
+          Pinned.fromPins(
+            Pin(size: 120.0, middle: 0.7569),
+            Pin(size: 44.0, start: 105.0),
+            child: Text(
+              'LOGIN',
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 36,
+                color: const Color(0xffffffff),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+
+          // password text
+          Pinned.fromPins(
+            Pin(start: 29.0, end: 19.0),
+            Pin(size: 200.0, middle: 0.448),
+            child: Column(
+              children: [
+                EditTextboxHolder(
+                  symbol: '@',
+                  label: 'username',
+                ),
+                EditTextboxHolder(symbol: '*', label: 'password'),
+              ],
+            ),
+          ),
+
+          // forget password link
           Pinned.fromPins(
             Pin(size: 163.0, end: 29.0),
-            Pin(size: 18.0, middle: 0.534),
+            Pin(size: 18.0, middle: 0.594),
             child: Text(
               'Forgot your password?',
               style: TextStyle(
@@ -601,9 +489,20 @@ class Login extends StatelessWidget {
               textAlign: TextAlign.left,
             ),
           ),
+
+          // login button
+          Pinned.fromPins(
+            Pin(size: 137.0, middle: 0.4706),
+            Pin(size: 48.0, middle: 0.6673),
+            child:
+                // Adobe XD layer: 'yelllow_btn' (component)
+                yelllow_btn(),
+          ),
+
+          // graph market
           Pinned.fromPins(
             Pin(start: 29.0, end: 28.0),
-            Pin(size: 273.0, end: -18.0),
+            Pin(size: 220.0, end: -18.0),
             child: Stack(
               children: <Widget>[
                 Pinned.fromPins(
@@ -1347,27 +1246,6 @@ class Login extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Pinned.fromPins(
-            Pin(size: 120.0, middle: 0.7569),
-            Pin(size: 44.0, start: 105.0),
-            child: Text(
-              'LOGIN',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 36,
-                color: const Color(0xffffffff),
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(size: 137.0, middle: 0.4706),
-            Pin(size: 48.0, middle: 0.6073),
-            child:
-                // Adobe XD layer: 'yelllow_btn' (component)
-                yelllow_btn(),
           ),
         ],
       ),
