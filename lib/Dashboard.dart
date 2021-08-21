@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Dashboard extends StatelessWidget {
@@ -35,7 +35,8 @@ class Dashboard extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
-          Pinned.fromPins(
+
+          /*Pinned.fromPins(
             Pin(size: 150.0, start: 8.0),
             Pin(size: 129.0, middle: 0.2782),
             child: Stack(
@@ -111,21 +112,9 @@ class Dashboard extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                 ),
-                Pinned.fromPins(
-                  Pin(size: 18.0, start: 20.4),
-                  Pin(size: 18.0, middle: 0.2342),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
-          ),
+          ),*/
           Pinned.fromPins(
             Pin(size: 150.0, middle: 0.7422),
             Pin(size: 129.0, middle: 0.2782),
@@ -200,18 +189,6 @@ class Dashboard extends StatelessWidget {
                       color: const Color(0xff06b966),
                     ),
                     textAlign: TextAlign.left,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 18.0, start: 20.4),
-                  Pin(size: 18.0, middle: 0.2342),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
                   ),
                 ),
               ],
@@ -293,18 +270,6 @@ class Dashboard extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                 ),
-                Pinned.fromPins(
-                  Pin(size: 18.0, start: 19.4),
-                  Pin(size: 18.0, middle: 0.2342),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -319,109 +284,6 @@ class Dashboard extends StatelessWidget {
                 color: const Color(0xffffffff),
               ),
               textAlign: TextAlign.left,
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: -1.0, end: 1.0),
-            Pin(size: 44.0, start: 0.0),
-            child:
-                // Adobe XD layer: 'Status Bar - Dark' (group)
-                Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(start: 0.0, end: 0.0),
-                  Pin(start: 0.0, end: 0.0),
-                  child: SvgPicture.string(
-                    _svg_pqetmq,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 15.0, end: 44.0),
-                  Pin(size: 11.0, middle: 0.5152),
-                  child:
-                      // Adobe XD layer: 'Wifi' (shape)
-                      SvgPicture.string(
-                    _svg_med7h1,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 17.0, middle: 0.8184),
-                  Pin(size: 11.0, middle: 0.5152),
-                  child:
-                      // Adobe XD layer: 'Mobile-Signal' (shape)
-                      SvgPicture.string(
-                    _svg_m4px5j,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 21.5, end: 16.5),
-                  Pin(size: 9.5, middle: 0.5217),
-                  child:
-                      // Adobe XD layer: 'Battery' (group)
-                      Stack(
-                    children: <Widget>[
-                      Pinned.fromPins(
-                        Pin(size: 1.5, end: 0.0),
-                        Pin(size: 3.5, middle: 0.5),
-                        child:
-                            // Adobe XD layer: 'Tip' (shape)
-                            SvgPicture.string(
-                          _svg_ustxtv,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      Pinned.fromPins(
-                        Pin(size: 15.0, start: 2.0),
-                        Pin(start: 2.0, end: 2.0),
-                        child:
-                            // Adobe XD layer: 'Fill' (shape)
-                            Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(1.0),
-                            color: const Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                      Pinned.fromPins(
-                        Pin(start: 0.0, end: 2.5),
-                        Pin(start: 0.0, end: 0.0),
-                        child:
-                            // Adobe XD layer: 'Outline' (shape)
-                            Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(2.5),
-                            border: Border.all(
-                                width: 1.0, color: const Color(0x66ffffff)),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 24.0, start: 37.4),
-                  Pin(size: 18.0, middle: 0.5552),
-                  child:
-                      // Adobe XD layer: '9:41 AM' (text)
-                      Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontFamily: 'Gilroy',
-                      fontSize: 15,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w300,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
             ),
           ),
           Pinned.fromPins(
@@ -502,18 +364,6 @@ class Dashboard extends StatelessWidget {
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.right,
-                                      ),
-                                    ),
-                                    Pinned.fromPins(
-                                      Pin(size: 32.0, start: 7.5),
-                                      Pin(size: 32.0, start: 1.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: const AssetImage(''),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
                                       ),
                                     ),
                                     Pinned.fromPins(
@@ -922,18 +772,6 @@ class Dashboard extends StatelessWidget {
                                       ),
                                     ),
                                     Pinned.fromPins(
-                                      Pin(size: 32.0, start: 7.5),
-                                      Pin(size: 32.0, start: 1.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: const AssetImage(''),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Pinned.fromPins(
                                       Pin(size: 48.0, middle: 0.1755),
                                       Pin(size: 13.0, middle: 0.5542),
                                       child: Text(
@@ -1336,18 +1174,6 @@ class Dashboard extends StatelessWidget {
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.right,
-                                      ),
-                                    ),
-                                    Pinned.fromPins(
-                                      Pin(size: 32.0, start: 7.5),
-                                      Pin(size: 32.0, start: 1.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: const AssetImage(''),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
                                       ),
                                     ),
                                     Pinned.fromPins(
@@ -1756,18 +1582,6 @@ class Dashboard extends StatelessWidget {
                                       ),
                                     ),
                                     Pinned.fromPins(
-                                      Pin(size: 32.0, start: 7.5),
-                                      Pin(size: 32.0, start: 1.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: const AssetImage(''),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Pinned.fromPins(
                                       Pin(size: 48.0, middle: 0.1755),
                                       Pin(size: 13.0, middle: 0.5542),
                                       child: Text(
@@ -2170,18 +1984,6 @@ class Dashboard extends StatelessWidget {
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.right,
-                                      ),
-                                    ),
-                                    Pinned.fromPins(
-                                      Pin(size: 32.0, start: 7.5),
-                                      Pin(size: 32.0, start: 1.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: const AssetImage(''),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
                                       ),
                                     ),
                                     Pinned.fromPins(

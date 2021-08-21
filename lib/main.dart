@@ -2,7 +2,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mypipay/Login.dart';
+
+import 'dashboard/dashboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     new Future.delayed(
         const Duration(seconds: 5),
-        () => Navigator.push(
+        () => Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => Login()),
+              MaterialPageRoute(builder: (context) => Dashboard()),
             ));
   }
 

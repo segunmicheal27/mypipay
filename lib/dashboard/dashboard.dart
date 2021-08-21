@@ -1,0 +1,247 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mypipay/layouts/svgs.dart';
+
+class Dashboard extends StatefulWidget {
+  @override
+  _DashboardState createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    _controller = AnimationController(vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xfff5f6fa),
+      body: Stack(
+        children: [
+          Container(
+            height: 258.5,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment(-1.0, -0.07),
+                end: Alignment(1.0, -0.06),
+                colors: [const Color(0xff5b307e), const Color(0xff31255c)],
+                stops: [0.0, 1.0],
+              ),
+            ),
+            child: SvgPicture.string(
+              svg_2vqvqh,
+              allowDrawingOutsideViewBox: true,
+              fit: BoxFit.fill,
+            ),
+          ),
+          SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SvgPicture.string(
+                        svg_mega_menu,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                      Container(
+                        height: 21,
+                        width: 21,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(100)),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 4),
+                          child: Text(
+                            '2',
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 12,
+                                color: const Color(0xfff6b133),
+                                fontWeight: FontWeight.w700),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 10),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Your Account Balance:',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 12,
+                                  color: const Color(0xffffffff),
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '3,200.50',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 22,
+                                      color: const Color(0xffffffff),
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(left: 8, top: 4),
+                                    child: SvgPicture.string(
+                                      svg_white_pi_logo,
+                                      allowDrawingOutsideViewBox: true,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '+2.36%',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 8,
+                                      color: const Color(0xffffffff),
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 2, right: 2),
+                                    child: Icon(
+                                      Icons.arrow_upward_sharp,
+                                      color: Colors.white,
+                                      size: 8,
+                                    ),
+                                  ),
+                                  Text(
+                                    'From last 2 days',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 8,
+                                      color: const Color(0xffffffff),
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    //Deposit and send button
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: Container(
+                        width: 143,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24.0),
+                          color: const Color(0xfff6b133),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0x29585858),
+                              offset: Offset(0, 3),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15),
+                              child: Text(
+                                'Deposite',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 12,
+                                  color: const Color(0xffffffff),
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                            Stack(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8),
+                                  child: Container(
+                                    width: 1,
+                                    color: const Color(0x29585858),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 9),
+                                  child: SvgPicture.string(
+                                    svg_white_circle_pi_logo,
+                                    allowDrawingOutsideViewBox: true,
+                                    fit: BoxFit.fill,
+                                    width: 18,
+                                    height: 18,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 15),
+                              child: Text(
+                                'Send',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 12,
+                                  color: const Color(0xffffffff),
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

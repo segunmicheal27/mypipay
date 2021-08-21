@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class yelllow_btn extends StatelessWidget {
+  final btnText;
   yelllow_btn({
     Key? key,
+    this.btnText,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,10 +22,10 @@ class yelllow_btn extends StatelessWidget {
           ),
         ),
         Pinned.fromPins(
-          Pin(size: 40.0, middle: 0.5052),
+          Pin(size: 60.0, middle: 0.5052),
           Pin(size: 18.0, middle: 0.5),
           child: Text(
-            'Login',
+            this.btnText,
             style: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 14,

@@ -2,7 +2,7 @@
     package="com.mypipay.mypipay">
    <application
         android:label="mypipay"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher_round">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
