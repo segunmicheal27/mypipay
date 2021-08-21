@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mypipay/dashboard/pi_to_others_crypto_asset.dart';
 import 'package:mypipay/layouts/svgs.dart';
 
 class Dashboard extends StatefulWidget {
@@ -166,7 +167,6 @@ class _DashboardState extends State<Dashboard>
                         ],
                       ),
                     ),
-                    //Deposit and send button
                     Padding(
                       padding: const EdgeInsets.only(right: 20),
                       child: Container(
@@ -237,6 +237,47 @@ class _DashboardState extends State<Dashboard>
                     ),
                   ],
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15, top: 15),
+                  child: Container(
+                    height: 129,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        PiToOthersCryptoAsset(
+                          cryptoAssetIcon: 'assets/images/btc_icon.png',
+                          cryptoAssetName: 'BTC',
+                          cryptoAssetRate: '0002453',
+                          cryptoAssetMarketPercentage: '-0.45',
+                          cryptoAssetMarketPercentageColor:
+                              const Color(0xfff45b7e),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15, right: 15),
+                          child: PiToOthersCryptoAsset(
+                            cryptoAssetIcon: 'assets/images/eth_icon.png',
+                            cryptoAssetName: 'ETH',
+                            cryptoAssetRate: '0.0024568',
+                            cryptoAssetMarketPercentage: '+0.56',
+                            cryptoAssetMarketPercentageColor:
+                                const Color(0xff06b966),
+                          ),
+                        ),
+                        PiToOthersCryptoAsset(
+                          cryptoAssetIcon: 'assets/images/btch_icon.png',
+                          cryptoAssetName: 'BTCH',
+                          cryptoAssetRate: '0.0524568',
+                          cryptoAssetMarketPercentage: '+0.56',
+                          cryptoAssetMarketPercentageColor:
+                              const Color(0xff06b966),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
