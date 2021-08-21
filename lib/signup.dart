@@ -2,7 +2,7 @@ import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/material.dart';
 import 'package:mypipay/layouts/plain_logo.dart';
 
-import 'Dashboard.dart';
+import 'dashboard/dashboard.dart';
 import 'layouts/edit_textbox_holder.dart';
 import 'layouts/yelllow_btn.dart';
 

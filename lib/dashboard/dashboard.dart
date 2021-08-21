@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mypipay/dashboard/pi_to_others_crypto_asset.dart';
+import 'package:mypipay/dashboard/transaction_history_item.dart';
 import 'package:mypipay/layouts/svgs.dart';
 
 class Dashboard extends StatefulWidget {
@@ -276,6 +277,143 @@ class _DashboardState extends State<Dashboard>
                         )
                       ],
                     ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 45, horizontal: 25),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Transaction History',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 16,
+                                color: const Color(0xff14172c),
+                                fontWeight: FontWeight.w500,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                            Text(
+                              'See All',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 14,
+                                color: const Color(0xff5a35f4),
+                                fontWeight: FontWeight.w500,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height - 403,
+                        child: ListView(
+                          scrollDirection: Axis.vertical,
+                          children: [
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'withdraw',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'TopUp',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'withdraw',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                            TransactionHistoryItem(
+                              transAmount: '56293',
+                              transAssetIcon: svg_purple_circle_pi_logo,
+                              transCurrencySymbol: '\$',
+                              transName: 'BURNA CO.',
+                              transTime: 'Yesterday',
+                              transType: 'deposite',
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 )
               ],

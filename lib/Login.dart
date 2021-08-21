@@ -1,11 +1,11 @@
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mypipay/Dashboard.dart';
 import 'package:mypipay/layouts/edit_textbox_holder.dart';
 import 'package:mypipay/layouts/svgs.dart';
 import 'package:mypipay/signup.dart';
 
+import 'dashboard/dashboard.dart';
 import 'layouts/yelllow_btn.dart';
 
 class Login extends StatefulWidget {
