@@ -9,6 +9,8 @@ class TransactionHistoryItem extends StatelessWidget {
   final transAmount;
   final transCurrencySymbol;
   final transType;
+  final transIssuedType;
+
   TransactionHistoryItem(
       {Key? key,
       this.transAssetIcon,
@@ -16,7 +18,8 @@ class TransactionHistoryItem extends StatelessWidget {
       this.transTime,
       this.transAmount,
       this.transCurrencySymbol,
-      this.transType})
+      this.transType,
+      this.transIssuedType})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -74,24 +77,39 @@ class TransactionHistoryItem extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: Text(
-                      transType == "withdraw"
-                          ? '- ' +
-                              transCurrencySymbol +
-                              formatter.format(double.parse(transAmount))
-                          : '+ ' +
-                              transCurrencySymbol +
-                              formatter.format(double.parse(transAmount)),
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        color: transType == "withdraw"
-                            ? Color(0xffff0000)
-                            : Color(0xff00B919),
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.right,
-                    ),
+                    child: transIssuedType == 'topup'
+                        ? Text(
+                            transType == 'withdraw'
+                                ? '- ' + transAmount
+                                : '+ ' + transAmount,
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 14,
+                              color: transType == "withdraw"
+                                  ? Color(0xffff0000)
+                                  : Color(0xff00B919),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.right,
+                          )
+                        : Text(
+                            transType == 'withdraw'
+                                ? '- ' +
+                                    transCurrencySymbol +
+                                    formatter.format(double.parse(transAmount))
+                                : '+ ' +
+                                    transCurrencySymbol +
+                                    formatter.format(double.parse(transAmount)),
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 14,
+                              color: transType == "withdraw"
+                                  ? Color(0xffff0000)
+                                  : Color(0xff00B919),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.right,
+                          ),
                   ),
                   Icon(
                     Icons.arrow_forward_ios_sharp,
@@ -104,7 +122,7 @@ class TransactionHistoryItem extends StatelessWidget {
           ),
           Container(
             height: 1,
-            color: Colors.black26,
+            color: Colors.black12,
           )
         ],
       ),

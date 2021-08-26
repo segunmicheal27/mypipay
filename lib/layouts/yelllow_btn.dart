@@ -1,4 +1,3 @@
-import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,27 +11,25 @@ class yelllow_btn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Pinned.fromPins(
-          Pin(start: 0.0, end: 0.0),
-          Pin(start: 0.0, end: 0.0),
-          child: SvgPicture.string(
-            _svg_ppo13j,
-            allowDrawingOutsideViewBox: true,
-            fit: BoxFit.fill,
-          ),
+        SvgPicture.string(
+          _svg_ppo13j,
+          allowDrawingOutsideViewBox: true,
+          fit: BoxFit.fill,
         ),
-        Pinned.fromPins(
-          Pin(size: 60.0, middle: 0.5052),
-          Pin(size: 18.0, middle: 0.5),
-          child: Text(
-            this.btnText,
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontSize: 14,
-              color: const Color(0xffffffff),
-              fontWeight: FontWeight.w600,
+        SizedBox(
+          height: 45,
+          width: double.maxFinite,
+          child: Center(
+            child: Text(
+              this.btnText,
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 14,
+                color: const Color(0xffffffff),
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
       ],

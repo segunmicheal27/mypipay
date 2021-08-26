@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class EditTextboxHolder extends StatelessWidget {
+class EditTextBoxHolder extends StatelessWidget {
   final symbol;
   final label;
   final validator;
-  EditTextboxHolder({Key? key, this.symbol, this.label, this.validator})
+  EditTextBoxHolder({Key? key, this.symbol, this.label, this.validator})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class EditTextboxHolder extends StatelessWidget {
                         this.symbol,
                         style: TextStyle(
                           fontFamily: 'Montserrat',
-                          fontSize: 30,
+                          fontSize: this.label == "password" ? 46 : 30,
                           color: const Color(0xffe1ddf8),
                           fontWeight: FontWeight.w700,
                         ),

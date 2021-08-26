@@ -25,7 +25,6 @@ dependencies:
     sdk: flutter
   adobe_xd:
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -53,9 +52,8 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/fonts/
     - assets/svgs/
-
+    - assets/fonts/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -81,3 +79,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-ExtraBold.otf
+        - asset: assets/fonts/Gilroy-Light.otf
+
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Bold.otf
+        - asset: assets/fonts/Montserrat-SemiBold.otf
+        - asset: assets/fonts/Montserrat-Medium.otf
