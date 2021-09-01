@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +8,12 @@ import 'package:mypipay/layouts/yelllow_btn.dart';
 import 'package:mypipay/wallets/wallets.dart';
 
 class WalletAddress extends StatefulWidget {
+  final wallet;
+  final cryptoAssetIcon;
+  final cryptoAsset;
+  const WalletAddress(
+      {Key? key, this.wallet, this.cryptoAssetIcon, this.cryptoAsset})
+      : super(key: key);
   @override
   _WalletAddressState createState() => _WalletAddressState();
 }
@@ -66,6 +74,11 @@ class _WalletAddressState extends State<WalletAddress>
                 children: [
                   Column(
                     children: [
+                      ui.window.physicalSize.width == 1080
+                          ? SizedBox(
+                              height: 20,
+                            )
+                          : SizedBox(),
                       Stack(
                         alignment: Alignment.center,
                         children: [
@@ -74,8 +87,12 @@ class _WalletAddressState extends State<WalletAddress>
                             children: [
                               Center(
                                 child: Container(
-                                  height: 65,
-                                  width: 65,
+                                  height: ui.window.physicalSize.width == 1080
+                                      ? 45
+                                      : 65,
+                                  width: ui.window.physicalSize.width == 1080
+                                      ? 45
+                                      : 65,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(9999.0, 9999.0)),
@@ -83,11 +100,24 @@ class _WalletAddressState extends State<WalletAddress>
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(6.0),
-                                    child: SvgPicture.string(
-                                      svg_purple_circle_pi_logo,
-                                      allowDrawingOutsideViewBox: true,
-                                      fit: BoxFit.fill,
-                                    ),
+                                    child: widget.wallet == 'PI'
+                                        ? SvgPicture.string(
+                                            svg_purple_circle_pi_logo,
+                                            allowDrawingOutsideViewBox: true,
+                                            fit: BoxFit.fill,
+                                          )
+                                        : widget.cryptoAsset == 'USDC'
+                                            ? SvgPicture.string(
+                                                widget.cryptoAssetIcon,
+                                                allowDrawingOutsideViewBox:
+                                                    true,
+                                                fit: BoxFit.fill,
+                                                width: 30,
+                                                height: 30,
+                                              )
+                                            : Image.asset(
+                                                widget.cryptoAssetIcon,
+                                              ),
                                   ),
                                 ),
                               ),
@@ -262,8 +292,8 @@ class _WalletAddressState extends State<WalletAddress>
                   children: [
                     Center(
                       child: Container(
-                        height: 84,
-                        width: 84,
+                        height: ui.window.physicalSize.width == 1080 ? 70 : 84,
+                        width: ui.window.physicalSize.width == 1080 ? 70 : 84,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(
                               Radius.elliptical(9999.0, 9999.0)),

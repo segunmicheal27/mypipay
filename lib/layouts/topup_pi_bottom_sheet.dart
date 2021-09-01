@@ -32,7 +32,7 @@ class _TopUpPiBottomSheet extends State<TopUpPiBottomSheet> {
             children: <Widget>[
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,7 +100,7 @@ class _TopUpPiBottomSheet extends State<TopUpPiBottomSheet> {
                 textAlign: TextAlign.left,
               ),
               Container(
-                height: 148,
+                height: 200,
                 child: ListView.builder(
                   // this allow to be exact content size
                   shrinkWrap: true,

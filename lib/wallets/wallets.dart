@@ -1,9 +1,11 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mypipay/dashboard/dashboard.dart';
 import 'package:mypipay/deposit_top_up_send.dart';
 import 'package:mypipay/layouts/svgs.dart';
-import 'package:mypipay/wallet_address.dart';
+import 'package:mypipay/wallets/wallet_address.dart';
 import 'package:mypipay/wallets/wallet_item.dart';
 
 class Wallets extends StatefulWidget {
@@ -33,7 +35,7 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
       body: Stack(
         children: [
           Container(
-            height: 240,
+            height: ui.window.physicalSize.width == 1080 ? 200 : 240,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -53,12 +55,14 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
             child: Column(
               children: [
                 Container(
-                  height: 250,
+                  height: ui.window.physicalSize.width == 1080 ? 200 : 250,
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 25, vertical: 20),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 25,
+                            vertical:
+                                ui.window.physicalSize.width == 1080 ? 8 : 20),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,8 +90,12 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
                                 color: Colors.white,
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 4),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8,
+                                    vertical:
+                                        ui.window.physicalSize.width == 1080
+                                            ? 2.5
+                                            : 4),
                                 child: Text(
                                   '2',
                                   style: TextStyle(
@@ -300,8 +308,9 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              WalletAddress()),
+                                          builder: (context) => WalletAddress(
+                                                wallet: 'PI',
+                                              )),
                                     );
                                   },
                                   child: WalletItem(
@@ -366,8 +375,10 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              WalletAddress()),
+                                          builder: (context) => WalletAddress(
+                                                cryptoAssetIcon:
+                                                    'assets/images/btc_icon.png',
+                                              )),
                                     );
                                   },
                                   child: WalletItem(
@@ -386,8 +397,10 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              WalletAddress()),
+                                          builder: (context) => WalletAddress(
+                                                cryptoAssetIcon: svg_usdc_icon,
+                                                cryptoAsset: 'USDC',
+                                              )),
                                     );
                                   },
                                   child: WalletItem(
@@ -405,8 +418,10 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              WalletAddress()),
+                                          builder: (context) => WalletAddress(
+                                                cryptoAssetIcon:
+                                                    'assets/images/btch_icon.png',
+                                              )),
                                     );
                                   },
                                   child: WalletItem(
@@ -425,8 +440,10 @@ class _WalletsState extends State<Wallets> with SingleTickerProviderStateMixin {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              WalletAddress()),
+                                          builder: (context) => WalletAddress(
+                                                cryptoAssetIcon:
+                                                    'assets/images/eth_icon.png',
+                                              )),
                                     );
                                   },
                                   child: WalletItem(

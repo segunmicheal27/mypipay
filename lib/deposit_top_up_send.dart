@@ -24,8 +24,10 @@ class _DepositTopUpSendState extends State<DepositTopUpSend>
     _controller = AnimationController(vsync: this);
     super.initState();
     topUpMeansData.add(new RadioModel(false, 'A', 'Pi Wallet', Icons.check));
-    topUpMeansData.add(new RadioModel(false, 'B', 'Debit Card', Icons.check));
+    topUpMeansData
+        .add(new RadioModel(false, 'B', 'Crypto Wallet', Icons.check));
     topUpMeansData.add(new RadioModel(false, 'C', 'Credit Card', Icons.check));
+    topUpMeansData.add(new RadioModel(false, 'D', 'Debit Card', Icons.check));
   }
 
   @override

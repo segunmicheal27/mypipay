@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:mypipay/layouts/feedback_message_dialog.dart';
 import 'package:mypipay/layouts/yelllow_btn.dart';
@@ -8,7 +10,7 @@ class TransactionSummaryDialog extends StatelessWidget {
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
-        height: 493,
+        height: ui.window.physicalSize.width == 1080 ? 493 : 450,
         width: 326,
         alignment: FractionalOffset.center,
         child: Stack(
@@ -56,8 +58,10 @@ class TransactionSummaryDialog extends StatelessWidget {
                             TextSpan(
                               text: 'qwyd7278ehje99j3jk2kflsu73k34l',
                               style: TextStyle(
-                                fontWeight: FontWeight.w300,
-                              ),
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: ui.window.physicalSize.width == 1080
+                                      ? 12
+                                      : 13.5),
                             ),
                           ],
                         ),

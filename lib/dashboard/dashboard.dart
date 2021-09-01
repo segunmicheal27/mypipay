@@ -1,8 +1,13 @@
+import 'dart:async';
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mypipay/dashboard/pi_to_others_crypto_asset.dart';
 import 'package:mypipay/dashboard/transaction_history_item.dart';
 import 'package:mypipay/deposit_top_up_send.dart';
+import 'package:mypipay/kyc.dart';
+import 'package:mypipay/layouts/getting_started_dialog.dart';
 import 'package:mypipay/layouts/svgs.dart';
 import 'package:mypipay/transaction_histories.dart';
 import 'package:mypipay/wallets/wallets.dart';
@@ -20,6 +25,14 @@ class _DashboardState extends State<Dashboard>
   void initState() {
     _controller = AnimationController(vsync: this);
     super.initState();
+    Timer.run(() {
+      showDialog(
+        context: context,
+        builder: (BuildContext dialogContext) {
+          return GettingStartedDialog();
+        },
+      );
+    });
   }
 
   @override
@@ -55,12 +68,14 @@ class _DashboardState extends State<Dashboard>
             child: Column(
               children: [
                 Container(
-                  height: 367,
+                  height: ui.window.physicalSize.width == 1080 ? 340 : 367,
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 25, vertical: 20),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 25,
+                            vertical:
+                                ui.window.physicalSize.width == 1080 ? 6 : 20),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,25 +94,38 @@ class _DashboardState extends State<Dashboard>
                                 fit: BoxFit.fill,
                               ),
                             ),
-                            Container(
-                              height: 21,
-                              width: 21,
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                                color: Colors.white,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 4),
-                                child: Text(
-                                  '2',
-                                  style: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 12,
-                                      color: const Color(0xfff6b133),
-                                      fontWeight: FontWeight.w700),
-                                  textAlign: TextAlign.left,
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Kyc()),
+                                );
+                              },
+                              child: Container(
+                                height: 21,
+                                width: 21,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(100)),
+                                  color: Colors.white,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical:
+                                          ui.window.physicalSize.width == 1080
+                                              ? 2.5
+                                              : 4),
+                                  child: Text(
+                                    '2',
+                                    style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 12,
+                                        color: const Color(0xfff6b133),
+                                        fontWeight: FontWeight.w700),
+                                    textAlign: TextAlign.left,
+                                  ),
                                 ),
                               ),
                             ),

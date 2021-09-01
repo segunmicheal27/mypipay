@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,6 +7,7 @@ import 'package:mypipay/layouts/svgs.dart';
 import 'package:mypipay/layouts/yelllow_btn.dart';
 
 class FeedbackMessageDialog extends StatelessWidget {
+  // ui.window.physicalSize.width == 1080 ? 20 :
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -20,8 +23,15 @@ class FeedbackMessageDialog extends StatelessWidget {
               alignment: FractionalOffset.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: ui.window.physicalSize.width == 1080
+                    ? MainAxisAlignment.start
+                    : MainAxisAlignment.center,
                 children: [
+                  ui.window.physicalSize.width == 1080
+                      ? SizedBox(
+                          height: 20,
+                        )
+                      : SizedBox(),
                   SvgPicture.string(
                     svg_star_award,
                     allowDrawingOutsideViewBox: true,
@@ -34,7 +44,7 @@ class FeedbackMessageDialog extends StatelessWidget {
                     'CONGRATULATIONS',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
-                      fontSize: 26,
+                      fontSize: ui.window.physicalSize.width == 1080 ? 22 : 26,
                       color: const Color(0xffffffff),
                       fontWeight: FontWeight.w700,
                     ),
